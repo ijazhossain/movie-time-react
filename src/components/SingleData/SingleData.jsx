@@ -3,7 +3,7 @@ import { Button, Card } from 'react-bootstrap';
 
 const SingleData = (props) => {
     const { poster, movieName, description, watchTime, imdbRating } = props.singleData;
-    console.log(poster, movieName, description, watchTime, imdbRating)
+    // console.log(poster, movieName, description, watchTime, imdbRating)
     return (
         <div className='col-6'>
             <Card style={{ width: '25rem' }}>
@@ -17,7 +17,7 @@ const SingleData = (props) => {
                         <p>Watch time: {watchTime}</p>
                         <p>Idmb Rating: {imdbRating}</p>
                     </div>
-                    <Button className='w-100' variant="primary">Book Now</Button>
+                    <Button onClick={() => props.handleBookNow(watchTime)} className='w-100' variant="primary">Book Now</Button>
                 </Card.Body>
             </Card>
         </div>
